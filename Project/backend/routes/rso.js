@@ -151,8 +151,8 @@ router.post('/leave', authenticateToken, async (req, res) => {
    }
 });
 
-// GET /api/rsos (Loads all RSOs that are approved)
-router.get('/rsos', authenticateToken, async (req, res) => {
+// GET /api/rso/list (Loads all RSOs that are approved)
+router.get('/list', authenticateToken, async (req, res) => {
    const { userId } = req.user;
  
    try {

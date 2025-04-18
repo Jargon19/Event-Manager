@@ -1,82 +1,211 @@
 /* RSOPage.css */
 
-.auth-container {
-   height: 100vh;
-   width: 100vw;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   background: linear-gradient(135deg, #003366, #005c99);
- }
- 
- .auth-box {
-   background-color: #012a4a;
-   padding: 3rem;
-   border-radius: 12px;
-   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-   width: 100%;
-   max-width: 420px;
-   color: white;
-   box-sizing: border-box;
- }
- 
- .auth-header {
-   display: flex;
-   align-items: center;
-   gap: 12px;
-   justify-content: center;
-   margin-bottom: 1.5rem;
- }
- 
- .auth-icon {
-   font-size: 2.5rem;
- }
- 
- .auth-title {
-   font-size: 1.75rem;
-   font-weight: bold;
-   margin: 0;
- }
- 
- .auth-error {
-   background: #ff4444;
-   padding: 0.5rem;
-   border-radius: 5px;
-   margin-bottom: 1rem;
-   text-align: center;
- }
- 
- form input,
- form select,
- form textarea {
-   width: 100%;
-   padding: 0.6rem 0.8rem;
-   margin-bottom: 1rem;
-   border: none;
-   border-radius: 6px;
-   font-size: 14px;
-   background-color: #e1e1e1;
-   color: black;
- }
- 
- form textarea {
-   resize: vertical;
- }
- 
- button {
-   width: 100%;
-   padding: 0.6rem;
-   background-color: #0077cc;
-   color: white;
-   border: none;
-   border-radius: 5px;
-   font-weight: bold;
-   font-size: 15px;
-   cursor: pointer;
-   transition: background-color 0.3s ease;
- }
- 
- button:hover {
-   background-color: #005999;
- }
- 
+/* Main container */
+.rso-container {
+  min-height: calc(100vh - 60px); /* Subtract navbar height to prevent overlap */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #003366, #005c99);
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+  /* Removed margin-top: 60px; to eliminate the gap */
+}
+
+/* Card styling */
+.rso-box {
+  background-color: white; /* Changed to white background */
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  width: 100%;
+  max-width: 500px;
+  color: #333; /* Darker text for better contrast */
+  box-sizing: border-box;
+}
+
+/* Header section */
+.rso-header {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.rso-title {
+  font-size: 1.75rem;
+  font-weight: bold;
+  margin: 0 0 0.5rem 0;
+  color: #003366; /* Darker blue for better contrast */
+}
+
+.rso-subtitle {
+  margin: 0;
+  color: #666; /* Darker subtitle for better visibility */
+  font-size: 0.9rem;
+}
+
+/* Form styling */
+.rso-form {
+  margin-top: -0.7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.rso-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  width: 100%;
+}
+
+.rso-label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #333; /* Dark text for better visibility */
+}
+
+.rso-input,
+.rso-textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ccc; /* Light border */
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: #f5f5f5; /* Light gray background */
+  color: #333; /* Dark text */
+  box-sizing: border-box;
+}
+
+.rso-textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.rso-input:focus,
+.rso-textarea:focus {
+  outline: none;
+  border-color: #0077cc;
+  box-shadow: 0 0 0 2px rgba(0, 119, 204, 0.2);
+  background-color: white; /* White background when focused */
+}
+
+/* Member list styling */
+.rso-members-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  width: 100%;
+}
+
+.rso-member-row {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  width: 100%;
+}
+
+/* Button styling */
+.rso-button-primary {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+  margin-top: 0.5rem;
+}
+
+.rso-button-primary:hover {
+  background-color: #0088ee;
+}
+
+.rso-button-primary:active {
+  transform: translateY(1px);
+}
+
+.rso-button-secondary {
+  background-color: #e1e1e1;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.rso-button-secondary:hover {
+  background-color: #d1d1d1;
+}
+
+.rso-button-add {
+  align-self: flex-start;
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.rso-button-icon {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  font-size: 12px;
+}
+
+/* Message styling */
+.rso-message {
+  padding: 0.75rem;
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.rso-success {
+  background-color: rgba(39, 174, 96, 0.1);
+  border: 1px solid rgba(39, 174, 96, 0.3);
+  color: #27ae60;
+}
+
+.rso-error {
+  background-color: rgba(231, 76, 60, 0.1);
+  border: 1px solid rgba(231, 76, 60, 0.3);
+  color: #e74c3c;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .rso-box {
+    padding: 1.5rem;
+  }
+
+  .rso-container {
+    padding: 1rem;
+  }
+
+  .rso-member-row {
+    flex-direction: column;
+    gap: 0.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+  }
+
+  .rso-button-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/* Removed the html, body styling that was creating the duplicate background */

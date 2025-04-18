@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from "react";
-import "../styles/AuthPages.css";
+import "../styles/RSOListPage.css";
 
 function RSOListPage() {
   const [rsos, setRsos] = useState([]);
   const [message, setMessage] = useState("");
 
   useEffect(() => {
-    fetch("/api/rsos", {
+    fetch("/api/rso/list", {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },
     })
       .then((res) => res.json())
       .then(setRsos)
-      .catch(() => setMessage("❌ Failed to load RSOs"));
+      .catch(() => setMessage("Failed to load RSOs"));
   }, []);
 
   const handleJoinLeave = async (rso_id, isJoining) => {
@@ -47,7 +47,7 @@ function RSOListPage() {
   
       setMessage(data.message);
     } catch (err) {
-      setMessage("❌ " + err.message);
+      setMessage("Error: " + err.message);
     }
   };
   
