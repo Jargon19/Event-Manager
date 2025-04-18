@@ -57,7 +57,7 @@
  }
  
  /* Event card (left side) */
- .event-card {
+ .event-card-1 {
    flex: 1;
    background-color: white;
    border-radius: 8px;
@@ -304,7 +304,7 @@
      align-items: center;
    }
  
-   .event-card,
+   .event-card-1,
    .comments-card {
      width: 100%;
      max-width: 100%;

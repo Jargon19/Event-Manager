@@ -139,7 +139,7 @@ function EventComments() {
 
       <div className="comments-layout">
         {/* Event Details Card (Left Side) */}
-        <div className="event-card">
+        <div className="event-card-1">
           <div className="event-header">
             <h2>{event.name}</h2>
           </div>

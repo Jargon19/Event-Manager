@@ -82,6 +82,41 @@ router.get('/get', authenticateToken, async (req, res) => {
    }
 });
 
+// GET /api/events/search?name=...  (Search events by name)
+router.get('/search', authenticateToken, async (req, res) => {
+  const { userId, universityId } = req.user;
+  const { name } = req.query;
+
+  if (!name) {
+    return res.status(400).json({ error: 'Query parameter "name" is required' });
+  }
+
+  try {
+    const likeName = `%${name}%`;
+
+    const [events] = await pool.query(
+      `
+      SELECT DISTINCT e.*
+      FROM events e
+      LEFT JOIN rso_members rm ON e.rso_id = rm.rso_id
+      WHERE 
+        (
+          e.visibility = 'public'
+          OR (e.visibility = 'private' AND e.university_id = ?)
+          OR (e.visibility = 'RSO' AND rm.user_id = ?)
+        )
+        AND e.name LIKE ?
+      `,
+      [universityId, userId, likeName]
+    );
+
+    res.json(events);
+  } catch (err) {
+    console.error("Event search error:", err);
+    res.status(500).json({ error: "Failed to search events" });
+  }
+});
+
 // GET /api/events/:id (Loading Specific Event)
 router.get('/:id', authenticateToken, async (req, res) => {
    const [rows] = await pool.query('SELECT * FROM events WHERE event_id = ?', [req.params.id]);
