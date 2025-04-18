@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../styles/AuthPages.css";
+import "../styles/RSOPage.css";
 
 function CreateRSOPage() {
   const [name, setName] = useState("");

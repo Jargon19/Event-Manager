@@ -101,7 +101,7 @@ function StudentPage() {
                       <p className="event-detail">
                         <strong>Time:</strong> {new Date(event.event_time).toLocaleString()}
                       </p>
-                      <p className="event-description">{event.description}</p>
+                      <p className="event-description-student">{event.description}</p>
                     </div>
 
                     <div className="event-footer">
