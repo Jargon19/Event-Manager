@@ -61,48 +61,106 @@ router.post('/register', async (req, res) => {
 
 // POST /api/auth/login (Login)
 router.post('/login', async (req, res) => {
-  const { username, password} = req.body;
+  const { username, password, rememberMe = false } = req.body;
 
   console.log('Login request body:', req.body);
 
   if (!username || !password) {
-    return res.status(400).json({ error: 'Email, password and role are required' });
+    return res.status(400).json({ error: 'Username and password are required' });
   }
 
   try {
-    // Get user with university info
     const [users] = await pool.query(`
       SELECT u.user_id, u.username, u.name, u.email, u.role, u.password_hash, 
-         u.university_id, un.name AS university_name
+             u.university_id, un.name AS university_name
       FROM users u
-      LEFT JOIN universities un ON u.university_id = un.university_id
+      LEFT JOIN universities un 
+        ON u.university_id = un.university_id
       WHERE u.username = ?
     `, [username]);
 
-    if (users.length === 0) return res.status(401).json({ error: 'Invalid credentials' });
-    
-    const user = users[0];
-    const validPassword = await bcrypt.compare(password, user.password_hash);
-    if (!validPassword) return res.status(401).json({ error: 'Invalid credentials' });
+    if (users.length === 0) {
+      return res.status(401).json({ error: 'Invalid credentials' });
+    }
 
-    // Create token payload
+    const user = users[0];
+    const valid = await bcrypt.compare(password, user.password_hash);
+    if (!valid) {
+      return res.status(401).json({ error: 'Invalid credentials' });
+    }
+
+    // Build JWT payload
     const payload = {
-      userId: user.user_id,
-      role: user.role,
+      userId:     user.user_id,
+      role:       user.role,
       universityId: user.university_id
     };
 
-    const accessToken = jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: '1h' });
+    const expiresIn = rememberMe ? '7d' : '1h';
+    const accessToken = jwt.sign(
+      payload,
+      process.env.JWT_SECRET,
+      { expiresIn }
+    );
+
+    // Strip out the password_hash before sending
     const { password_hash, ...userData } = user;
 
     res.json({
       ...userData,
-      accessToken
+      accessToken,
     });
 
   } catch (error) {
     console.error('Login error:', error);
     res.status(500).json({ error: 'Login failed' });
+  }
+});
+
+
+// POST /api/auth/forgot-password (Enter username for forgotten password)
+router.post("/forgot-password", async (req, res) => {
+  const { username } = req.body;
+  if (!username)
+    return res.status(400).json({ error: "Username is required" });
+
+  try {
+    const [rows] = await pool.query(
+      "SELECT user_id FROM users WHERE username = ?",
+      [username]
+    );
+    if (!rows.length)
+      return res.status(404).json({ error: "User not found" });
+
+    // we “approve” the request here; no email step.
+    return res.json({ message: "OK" });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Server error" });
+  }
+});
+
+// POST /api/auth/reset-password (Enter new password)
+router.post("/reset-password", async (req, res) => {
+  const { username, newPassword } = req.body;
+  if (!username || !newPassword)
+    return res.status(400).json({ error: "Username and a new Password are required" });
+
+  try {
+    // hash & update
+    const hash = await bcrypt.hash(newPassword, 12);
+    const [result] = await pool.query(
+      "UPDATE users SET password_hash = ? WHERE username = ?",
+      [hash, username]
+    );
+
+    if (result.affectedRows === 0)
+      return res.status(404).json({ error: "User not found" });
+
+    res.json({ message: "Password reset successful" });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Server error" });
   }
 });
 

@@ -1,0 +1,147 @@
+/* Login.css */
+
+.auth-container {
+   height: 100vh;
+   width: 100vw;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background: linear-gradient(135deg, #003366, #005c99);
+}
+ 
+.auth-box {
+   background-color: #012a4a;
+   padding: 3rem;
+   border-radius: 12px;
+   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+   width: 100%;
+   max-width: 420px;
+   color: white;
+   box-sizing: border-box;
+}
+ 
+.auth-header {
+   display: flex;
+   align-items: center;
+   gap: 12px;
+   justify-content: center;
+   margin-bottom: 1.5rem;
+}
+ 
+.auth-icon {
+   font-size: 2.5rem;
+}
+ 
+.auth-title {
+   font-size: 1.75rem;
+   font-weight: bold;
+   margin: 0;
+}
+ 
+.auth-error {
+   background: #ff4444;
+   padding: 0.5rem;
+   border-radius: 5px;
+   margin-bottom: 1rem;
+   text-align: center;
+}
+ 
+form input,
+form select,
+form textarea {
+   width: 100%;
+   padding: 0.6rem 0.8rem;
+   margin-bottom: 0.5rem; /* Reduced from 1rem */
+   border: none;
+   border-radius: 6px;
+   font-size: 14px;
+   background-color: #e1e1e1;
+   color: black;
+}
+ 
+form textarea {
+   resize: vertical;
+}
+ 
+.auth-forgot-password {
+   width: 100%;
+   text-align: left;
+   margin-bottom: 0.4rem;   /* cut bottom spacing in half */
+   margin-top: -0.7rem;
+}
+ 
+.auth-forgot-password a {
+   color: #3498db; /* Bright blue color */
+   font-size: 14px;
+   text-decoration: none;
+   transition: color 0.3s ease;
+   opacity: 1; /* Full opacity */
+}
+ 
+.auth-forgot-password a:hover {
+   color: #2980b9; /* Slightly darker blue on hover */
+   text-decoration: underline;
+}
+ 
+/* Fix for the remember me checkbox */
+.auth-remember-me {
+   display: flex;
+   align-items: center;
+   margin: 0 0 0.7rem;  /* Reduced from 1.5rem */
+   color: #000000; /* Black text */
+   opacity: 1; /* Full opacity */
+}
+ 
+.auth-remember-me label {
+   display: flex;
+   align-items: center;
+   cursor: pointer;
+}
+ 
+.auth-remember-me input[type="checkbox"] {
+   width: auto;
+   margin-right: 8px;
+   margin-bottom: 0;
+   cursor: pointer;
+}
+ 
+button {
+   width: 100%;
+   padding: 0.6rem;
+   background-color: #0077cc;
+   color: white;
+   border: none;
+   border-radius: 5px;
+   font-weight: bold;
+   font-size: 15px;
+   cursor: pointer;
+   transition: background-color 0.3s ease;
+}
+ 
+button:hover {
+   background-color: #005999;
+}
+ 
+button:disabled {
+   background-color: #004d80;
+   cursor: not-allowed;
+}
+ 
+.auth-footer {
+   margin-top: 1.5rem;
+   text-align: center;
+   color: #e1e1e1;
+}
+ 
+.auth-footer a {
+   color: #3498db;
+   text-decoration: none;
+   font-weight: bold;
+   transition: all 0.3s ease;
+}
+ 
+.auth-footer a:hover {
+   color: #2980b9;
+   text-decoration: underline;
+}
+ 

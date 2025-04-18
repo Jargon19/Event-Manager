@@ -12,6 +12,8 @@ import RSOPage from "./pages/RSOPage";
 import ApproveRSOPage from "./pages/ApproveRSOPage";
 import EventComments from "./pages/EventComments";
 import MyRSOsPage from "./pages/RSOListPage";
+import ForgotPasswordRequestPage from './pages/ForgotPasswordPage';
+import ResetPasswordPage from './pages/RestPasswordPage';
 import './index.css'
 import { useEffect } from "react";
 
@@ -43,6 +45,8 @@ function App() {
         <Route path="/" element={<Navigate to="/dashboard" />} />
         <Route path="/login" element={<LoginPage setUser={setUser} />} />
         <Route path="/register" element={<RegisterPage setUser={setUser}/>} />
+        <Route path="/forgot-password" element={<ForgotPasswordRequestPage />} />
+        <Route path="/reset-password"  element={<ResetPasswordPage />} />
         
         <Route element={<ProtectedLayout />}>
           <Route path="/dashboard" element={<Dashboard user={user} />} />

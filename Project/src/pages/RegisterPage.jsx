@@ -88,7 +88,7 @@ function RegisterPage({ setUser }) {
     <div className="auth-container">
       <div className="auth-box">
         <div className="auth-header">
-          <span className="auth-icon">📝</span>
+          <span className="auth-icon">👤</span>
           <h2 className="auth-title">User Register</h2>
         </div>
         {error && <p className="auth-error">{error}</p>}
