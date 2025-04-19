@@ -1,0 +1,232 @@
+/* ApproveRSOPage.css */
+
+.approve-container {
+   height: 100vh;
+   width: 100vw;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background: linear-gradient(135deg, #003366, #005c99);
+   padding: 2rem;
+   box-sizing: border-box;
+ }
+ 
+ .approve-box {
+   background-color: #012a4a;
+   border-radius: 12px;
+   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+   width: 100%;
+   max-width: 600px;
+   color: white;
+   box-sizing: border-box;
+   overflow: hidden;
+   display: flex;
+   flex-direction: column;
+ }
+ 
+ .approve-header {
+   padding: 1.5rem 2rem;
+   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+ }
+ 
+ .approve-title {
+   font-size: 1.75rem;
+   font-weight: bold;
+   margin: 0 0 0.5rem 0;
+   color: white;
+ }
+ 
+ .approve-subtitle {
+   margin: 0;
+   color: rgba(255, 255, 255, 0.7);
+   font-size: 0.95rem;
+ }
+ 
+ .approve-message {
+   padding: 1rem 2rem;
+   font-size: 0.95rem;
+   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+ }
+ 
+ .approve-success {
+   background-color: rgba(39, 174, 96, 0.2);
+   color: #2ecc71;
+ }
+ 
+ .approve-error {
+   background-color: rgba(231, 76, 60, 0.2);
+   color: #e74c3c;
+ }
+ 
+ .approve-content {
+   padding: 1.5rem 2rem;
+   max-height: 60vh;
+   overflow-y: auto;
+ }
+ 
+ /* Loading state */
+ .approve-loading {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   padding: 2rem 0;
+   color: rgba(255, 255, 255, 0.7);
+ }
+ 
+ .approve-spinner {
+   width: 40px;
+   height: 40px;
+   border: 3px solid rgba(255, 255, 255, 0.3);
+   border-radius: 50%;
+   border-top-color: #fff;
+   animation: spin 1s ease-in-out infinite;
+   margin-bottom: 1rem;
+ }
+ 
+ @keyframes spin {
+   to {
+     transform: rotate(360deg);
+   }
+ }
+ 
+ /* Empty state */
+ .approve-empty {
+   text-align: center;
+   padding: 2rem 0;
+   color: rgba(255, 255, 255, 0.7);
+ }
+ 
+ .approve-empty-icon {
+   font-size: 3rem;
+   margin-bottom: 1rem;
+   background-color: rgba(39, 174, 96, 0.2);
+   color: #2ecc71;
+   width: 80px;
+   height: 80px;
+   border-radius: 50%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin: 0 auto 1rem auto;
+ }
+ 
+ .approve-empty-subtitle {
+   font-size: 0.9rem;
+   opacity: 0.7;
+   margin-top: 0.5rem;
+ }
+ 
+ /* RSO List */
+ .approve-rso-list {
+   display: flex;
+   flex-direction: column;
+   gap: 1rem;
+ }
+ 
+ .approve-rso-card {
+   background-color: rgba(255, 255, 255, 0.05);
+   border-radius: 8px;
+   overflow: hidden;
+   border: 1px solid rgba(255, 255, 255, 0.1);
+   transition: transform 0.2s, box-shadow 0.2s;
+ }
+ 
+ .approve-rso-card:hover {
+   transform: translateY(-2px);
+   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+   background-color: rgba(255, 255, 255, 0.08);
+ }
+ 
+ .approve-rso-info {
+   padding: 1.25rem;
+ }
+ 
+ .approve-rso-header {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-bottom: 0.75rem;
+ }
+ 
+ .approve-rso-name {
+   margin: 0;
+   font-size: 1.2rem;
+   font-weight: 600;
+   color: white;
+ }
+ 
+ .approve-rso-status {
+   background-color: rgba(241, 196, 15, 0.2);
+   color: #f1c40f;
+   padding: 0.25rem 0.5rem;
+   border-radius: 4px;
+   font-size: 0.8rem;
+   font-weight: 500;
+ }
+ 
+ .approve-rso-details {
+   display: flex;
+   flex-direction: column;
+   gap: 0.5rem;
+   color: rgba(255, 255, 255, 0.8);
+   font-size: 0.95rem;
+ }
+ 
+ .approve-detail-label {
+   color: rgba(255, 255, 255, 0.6);
+   font-weight: 500;
+   margin-right: 0.25rem;
+ }
+ 
+ .approve-rso-description {
+   margin: 0.5rem 0;
+   line-height: 1.4;
+ }
+ 
+ .approve-rso-actions {
+   padding: 0.75rem 1.25rem;
+   background-color: rgba(0, 0, 0, 0.2);
+   border-top: 1px solid rgba(255, 255, 255, 0.1);
+ }
+ 
+ .approve-button {
+   width: 100%;
+   padding: 0.6rem;
+   background-color: #27ae60;
+   color: white;
+   border: none;
+   border-radius: 5px;
+   font-weight: bold;
+   font-size: 15px;
+   cursor: pointer;
+   transition: background-color 0.3s ease;
+ }
+ 
+ .approve-button:hover {
+   background-color: #2ecc71;
+ }
+ 
+ /* Responsive adjustments */
+ @media (max-width: 768px) {
+   .approve-container {
+     padding: 1rem;
+     align-items: flex-start;
+     height: auto;
+     min-height: 100vh;
+   }
+ 
+   .approve-box {
+     max-width: 100%;
+   }
+ 
+   .approve-header {
+     padding: 1.25rem 1.5rem;
+   }
+ 
+   .approve-content {
+     padding: 1.25rem 1.5rem;
+     max-height: none;
+   }
+ }
+ 
