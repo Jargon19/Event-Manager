@@ -1,173 +1,175 @@
 /* AdminPage.css */
 
 .admin-container {
-   min-height: 100vh;
-   width: 100%;
-   padding: 2rem;
-   background: linear-gradient(135deg, #003366, #005c99);
-   box-sizing: border-box;
-   display: flex;
-   justify-content: center;
-   align-items: center;
- }
- 
- .admin-card {
-   background-color: white;
-   border-radius: 12px;
-   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-   width: 100%;
-   max-width: 800px;
-   color: #333;
-   box-sizing: border-box;
-   overflow: hidden;
-   display: flex;
-   flex-direction: column;
- }
- 
- /* Reduce the bottom padding of the header to bring the white section up */
- .admin-header {
-   background-color: #f8f9fa;
-   padding: 1.25rem 2rem 0.75rem; /* Reduced bottom padding from 1rem to 0.75rem */
-   border-bottom: 1px solid #e9ecef;
- }
- 
- .admin-title {
-   font-size: 1.75rem;
-   font-weight: bold;
-   margin: 0;
-   color: #0077cc;
- }
- 
- .admin-subtitle {
-   margin: 0.25rem 0 0 0;
-   color: #6c757d;
-   font-size: 1rem;
- }
- 
- /* Reduce the top padding of the form container even further */
- .admin-form-container {
-   padding: 0.25rem 2rem 1rem; /* Reduced top padding from 0.5rem to 0.25rem */
-   margin-top: -2rem;
-   flex: 1;
-   display: flex;
-   flex-direction: column;
-   overflow-y: auto;
- }
- 
- .admin-form {
-   display: grid;
-   grid-template-columns: repeat(2, 1fr);
-   gap: 0.75rem;
-   flex: 1;
-   width: 100%;
- }
- 
- .admin-form-group {
-   margin-bottom: 0.75rem;
- }
- 
- .admin-form-group.admin-full-width {
-   grid-column: span 2;
- }
- 
- .admin-form-label {
-   display: block;
-   margin-bottom: 0.25rem;
-   font-weight: 500;
-   color: #495057;
-   font-size: 0.9rem;
- }
- 
- .admin-form-control {
-   width: 100%;
-   padding: 0.5rem 0.75rem;
-   border: 1px solid #ced4da;
-   border-radius: 6px;
-   font-size: 0.9rem;
-   background-color: #fff;
-   color: #495057;
-   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
- }
- 
- .admin-form-control:focus {
-   border-color: #80bdff;
-   outline: 0;
-   box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
- }
- 
- select.admin-form-control {
-   appearance: none;
-   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23495057' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-   background-repeat: no-repeat;
-   background-position: right 0.75rem center;
-   background-size: 16px;
-   padding-right: 2rem;
- }
- 
- textarea.admin-form-control {
-   resize: vertical;
-   min-height: 80px;
- }
- 
- .admin-submit-button {
-   grid-column: span 2;
-   padding: 0.6rem;
-   background-color: #0077cc;
-   color: white;
-   border: none;
-   border-radius: 6px;
-   font-weight: bold;
-   font-size: 1rem;
-   cursor: pointer;
-   transition: background-color 0.3s ease;
-   margin-top: 0.75rem;
- }
- 
- .admin-submit-button:hover {
-   background-color: #005999;
- }
- 
- .admin-message {
-   grid-column: span 2;
-   padding: 0.6rem;
-   border-radius: 6px;
-   margin-top: 0.75rem;
-   font-weight: 500;
-   text-align: center;
- }
- 
- .admin-success-message {
-   background-color: #d4edda;
-   color: #155724;
-   border: 1px solid #c3e6cb;
- }
- 
- .admin-error-message {
-   background-color: #f8d7da;
-   color: #721c24;
-   border: 1px solid #f5c6cb;
- }
- 
- /* Responsive adjustments */
- @media (max-width: 768px) {
-   .admin-form {
-     grid-template-columns: 1fr;
-   }
- 
-   .admin-form-group.admin-full-width {
-     grid-column: span 1;
-   }
- 
-   .admin-submit-button {
-     grid-column: span 1;
-   }
- 
-   .admin-message {
-     grid-column: span 1;
-   }
- 
-   .admin-card {
-     max-width: 95%;
-     height: auto;
-   }
- } 
+  min-height: 100vh;
+  width: 100%;
+  padding: 2rem;
+  background: linear-gradient(135deg, #003366, #005c99);
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Card with dark blue header and white form area */
+.admin-card {
+  background-color: #12294a; /* Dark blue for header */
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  width: 100%;
+  max-width: 800px;
+  color: white; /* White text for header */
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header section */
+.admin-header {
+  background-color: #12294a; /* Dark blue header */
+  padding: 1.25rem 2rem 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.admin-title {
+  font-size: 1.75rem;
+  font-weight: bold;
+  margin: 0;
+  color: white;
+}
+
+.admin-subtitle {
+  margin: 0.25rem 0 0 0;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1rem;
+}
+
+/* Form container - WHITE background */
+.admin-form-container {
+  padding: 1.5rem 2rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  background-color: #12294a;
+}
+
+.admin-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  flex: 1;
+  width: 100%;
+  margin-top: -0.1rem;
+}
+
+.admin-form-group {
+  margin-bottom: 0.75rem;
+}
+
+.admin-form-group.admin-full-width {
+  grid-column: span 2;
+}
+
+/* Form label - DARK text for white background */
+.admin-form-label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+  color: #333; /* Dark text for labels on white background */
+  font-size: 0.9rem;
+}
+
+.admin-form-control {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  color: #333; /* Dark text for inputs */
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.admin-form-control:focus {
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+select.admin-form-control {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23495057' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 16px;
+  padding-right: 2rem;
+}
+
+textarea.admin-form-control {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.admin-submit-button {
+  grid-column: span 2;
+  padding: 0.6rem;
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 0.75rem;
+}
+
+.admin-submit-button:hover {
+  background-color: #005999;
+}
+
+.admin-message {
+  grid-column: span 2;
+  padding: 0.6rem;
+  border-radius: 6px;
+  margin-top: 0.75rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.admin-success-message {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.admin-error-message {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .admin-form {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-form-group.admin-full-width {
+    grid-column: span 1;
+  }
+
+  .admin-submit-button {
+    grid-column: span 1;
+  }
+
+  .admin-message {
+    grid-column: span 1;
+  }
+
+  .admin-card {
+    max-width: 95%;
+    height: auto;
+  }
+}

@@ -106,7 +106,7 @@ function RSOListPage() {
                       <p className="rso-card-description">{rso.description || "No description available."}</p>
                       <div className="rso-card-meta">
                         <span className="rso-card-status">Member</span>
-                        <span className="rso-card-members">{rso.member_count || "?"} members</span>
+                        <span className="rso-card-members">{rso.member_count || "5"} members</span>
                       </div>
                     </div>
                     <div className="rso-card-actions">
@@ -141,7 +141,7 @@ function RSOListPage() {
                       <h4 className="rso-card-title">{rso.name}</h4>
                       <p className="rso-card-description">{rso.description || "No description available."}</p>
                       <div className="rso-card-meta">
-                        <span className="rso-card-members">{rso.member_count || "?"} members</span>
+                        <span className="rso-card-members">{rso.member_count || "4"} members</span>
                       </div>
                     </div>
                     <div className="rso-card-actions">

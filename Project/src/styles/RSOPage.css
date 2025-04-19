@@ -15,7 +15,7 @@
 
 /* Card styling */
 .rso-box {
-  background-color: white; /* Changed to white background */
+  background-color: #012a4a; /* Changed to white background */
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
@@ -35,12 +35,12 @@
   font-size: 1.75rem;
   font-weight: bold;
   margin: 0 0 0.5rem 0;
-  color: #003366; /* Darker blue for better contrast */
+  color: #d5d7d8; /* Darker blue for better contrast */
 }
 
 .rso-subtitle {
   margin: 0;
-  color: #666; /* Darker subtitle for better visibility */
+  color: #d4d4d4; /* Darker subtitle for better visibility */
   font-size: 0.9rem;
 }
 

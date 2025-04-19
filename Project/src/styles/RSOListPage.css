@@ -2,261 +2,261 @@
 
 /* Main container */
 .rso-list-container {
-   min-height: calc(100vh - 60px); /* Subtract navbar height */
-   width: 100%;
-   padding: 2rem;
-   background: linear-gradient(135deg, #003366, #005c99);
-   box-sizing: border-box;
-   display: flex;
-   justify-content: center;
-   align-items: flex-start;
- }
- 
- /* Dashboard container */
- .rso-list-dashboard {
-   background-color: white;
-   border-radius: 12px;
-   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-   width: 100%;
-   max-width: 900px;
-   color: #262626;
-   box-sizing: border-box;
-   overflow: hidden;
-   display: flex;
-   flex-direction: column;
- }
- 
- /* Header section */
- .rso-list-header {
-   padding: 1.5rem;
-   border-bottom: 1px solid #efefef;
-   background-color: white;
- }
- 
- .rso-list-title {
-   font-size: 1.75rem;
-   font-weight: bold;
-   margin: 0 0 0.5rem 0;
-   color: #003366;
- }
- 
- .rso-list-subtitle {
-   margin: 0 0 1.5rem 0;
-   color: #737373;
-   font-size: 0.95rem;
- }
- 
- /* Search bar */
- .rso-search-container {
-   position: relative;
-   margin-bottom: 0;
- }
- 
- .rso-search-input {
-   width: 100%;
-   height: 42px;
-   padding: 0 15px;
-   border: 1px solid #dbdbdb;
-   border-radius: 8px;
-   font-size: 0.9rem;
-   background-color: #fafafa;
-   color: #262626;
-   transition: border-color 0.3s, box-shadow 0.3s;
-   box-sizing: border-box;
- }
- 
- .rso-search-input:focus {
-   outline: none;
-   border-color: #0077cc;
-   box-shadow: 0 0 0 1px rgba(0, 119, 204, 0.3);
- }
- 
- /* Message styling */
- .rso-list-message {
-   padding: 0.75rem 1.5rem;
-   margin: 0;
-   font-size: 0.9rem;
- }
- 
- .rso-list-success {
-   background-color: #d4edda;
-   color: #155724;
-   border-bottom: 1px solid #c3e6cb;
- }
- 
- .rso-list-error {
-   background-color: #f8d7da;
-   color: #721c24;
-   border-bottom: 1px solid #f5c6cb;
- }
- 
- /* Content area */
- .rso-list-content {
-   padding: 1.5rem;
-   background-color: #fafafa;
-   flex: 1;
-   overflow-y: auto;
-   max-height: 70vh;
- }
- 
- /* Section styling */
- .rso-section {
-   margin-bottom: 2rem;
- }
- 
- .rso-section-title {
-   font-size: 1.2rem;
-   font-weight: 600;
-   margin: 0 0 1rem 0;
-   color: #262626;
-   display: flex;
-   align-items: center;
- }
- 
- .rso-section-icon {
-   margin-right: 0.5rem;
-   font-size: 1.2rem;
- }
- 
- /* Empty state */
- .rso-empty-state {
-   background-color: white;
-   border-radius: 8px;
-   padding: 1.5rem;
-   text-align: center;
-   color: #8e8e8e;
-   border: 1px dashed #dbdbdb;
- }
- 
- /* RSO cards */
- .rso-cards {
-   display: grid;
-   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-   gap: 1rem;
- }
- 
- .rso-card {
-   background-color: white;
-   border-radius: 8px;
-   overflow: hidden;
-   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-   display: flex;
-   flex-direction: column;
-   border: 1px solid #dbdbdb;
-   transition: transform 0.2s, box-shadow 0.2s;
- }
- 
- .rso-card:hover {
-   transform: translateY(-2px);
-   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
- }
- 
- .rso-card-member {
-   border-left: 4px solid #27ae60; /* Green border for RSOs user is a member of */
- }
- 
- .rso-card-available {
-   border-left: 4px solid #3498db; /* Blue border for available RSOs */
- }
- 
- .rso-card-content {
-   padding: 1rem;
-   flex: 1;
- }
- 
- .rso-card-title {
-   margin: 0 0 0.5rem 0;
-   font-size: 1.1rem;
-   font-weight: 600;
-   color: #262626;
- }
- 
- .rso-card-description {
-   margin: 0 0 1rem 0;
-   font-size: 0.9rem;
-   color: #262626;
-   line-height: 1.4;
-   display: -webkit-box;
-   -webkit-line-clamp: 3;
-   -webkit-box-orient: vertical;
-   overflow: hidden;
-   text-overflow: ellipsis;
- }
- 
- .rso-card-meta {
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-   font-size: 0.8rem;
-   color: #8e8e8e;
- }
- 
- .rso-card-status {
-   background-color: rgba(39, 174, 96, 0.1);
-   color: #27ae60;
-   padding: 0.25rem 0.5rem;
-   border-radius: 4px;
-   font-weight: 500;
- }
- 
- .rso-card-members {
-   color: #8e8e8e;
- }
- 
- .rso-card-actions {
-   padding: 0.75rem 1rem;
-   border-top: 1px solid #efefef;
-   background-color: #fafafa;
- }
- 
- /* Button styling */
- .rso-button-join,
- .rso-button-leave {
-   width: 100%;
-   padding: 0.6rem;
-   border: none;
-   border-radius: 5px;
-   font-weight: bold;
-   font-size: 14px;
-   cursor: pointer;
-   transition: background-color 0.3s ease;
- }
- 
- .rso-button-join {
-   background-color: #3498db;
-   color: white;
- }
- 
- .rso-button-join:hover {
-   background-color: #2980b9;
- }
- 
- .rso-button-leave {
-   background-color: #f8f9fa;
-   color: #e74c3c;
-   border: 1px solid #e74c3c;
- }
- 
- .rso-button-leave:hover {
-   background-color: #fee;
- }
- 
- /* Responsive adjustments */
- @media (max-width: 768px) {
-   .rso-list-container {
-     padding: 1rem;
-   }
- 
-   .rso-list-dashboard {
-     max-width: 100%;
-   }
- 
-   .rso-cards {
-     grid-template-columns: 1fr;
-   }
- 
-   .rso-list-content {
-     max-height: none;
-   }
- }
- 
+  min-height: calc(100vh - 60px); /* Subtract navbar height */
+  width: 100%;
+  padding: 2rem;
+  background: linear-gradient(135deg, #003366, #005c99);
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* Dashboard container */
+.rso-list-dashboard {
+  background-color: #012a4a;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  width: 100%;
+  max-width: 900px;
+  color: white; /* Changed from #262626 */
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header section */
+.rso-list-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Changed from #efefef */
+  background-color: #012a4a; /* Changed from white */
+}
+
+.rso-list-title {
+  font-size: 1.75rem;
+  font-weight: bold;
+  margin: 0 0 0.5rem 0;
+  color: white; /* Changed from #003366 */
+}
+
+.rso-list-subtitle {
+  margin: 0 0 1.5rem 0;
+  color: rgba(255, 255, 255, 0.7); /* Changed from #737373 */
+  font-size: 0.95rem;
+}
+
+/* Search bar */
+.rso-search-container {
+  position: relative;
+  margin-bottom: 0;
+}
+
+.rso-search-input {
+  width: 100%;
+  height: 42px;
+  padding: 0 15px;
+  border: 1px solid #dbdbdb;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  background-color: #fafafa;
+  color: #262626;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  box-sizing: border-box;
+}
+
+.rso-search-input:focus {
+  outline: none;
+  border-color: #0077cc;
+  box-shadow: 0 0 0 1px rgba(0, 119, 204, 0.3);
+}
+
+/* Message styling */
+.rso-list-message {
+  padding: 0.75rem 1.5rem;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.rso-list-success {
+  background-color: #d4edda;
+  color: #155724;
+  border-bottom: 1px solid #c3e6cb;
+}
+
+.rso-list-error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border-bottom: 1px solid #f5c6cb;
+}
+
+/* Content area */
+.rso-list-content {
+  padding: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.1); /* Changed from #fafafa */
+  flex: 1;
+  overflow-y: auto;
+  max-height: 70vh;
+}
+
+/* Section styling */
+.rso-section {
+  margin-bottom: 2rem;
+}
+
+.rso-section-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+  color: white; /* Changed from #262626 */
+  display: flex;
+  align-items: center;
+}
+
+.rso-section-icon {
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
+}
+
+/* Empty state */
+.rso-empty-state {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  color: #8e8e8e;
+  border: 1px dashed #dbdbdb;
+}
+
+/* RSO cards */
+.rso-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.rso-card {
+  background-color: rgba(255, 255, 255, 0.05); /* Changed from white */
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Changed from #dbdbdb */
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.rso-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  background-color: rgba(255, 255, 255, 0.08); /* Added for hover effect */
+}
+
+.rso-card-member {
+  border-left: 4px solid #27ae60; /* Green border for RSOs user is a member of */
+}
+
+.rso-card-available {
+  border-left: 4px solid #3498db; /* Blue border for available RSOs */
+}
+
+.rso-card-content {
+  padding: 1rem;
+  flex: 1;
+}
+
+.rso-card-title {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white; /* Changed from #262626 */
+}
+
+.rso-card-description {
+  margin: 0 0 1rem 0;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.9); /* Changed from #262626 */
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rso-card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  color: #8e8e8e;
+}
+
+.rso-card-status {
+  background-color: rgba(39, 174, 96, 0.1);
+  color: #27ae60;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.rso-card-members {
+  color: #8e8e8e;
+}
+
+.rso-card-actions {
+  padding: 0.75rem 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1); /* Changed from #efefef */
+  background-color: rgba(0, 0, 0, 0.2); /* Changed from #fafafa */
+}
+
+/* Button styling */
+.rso-button-join,
+.rso-button-leave {
+  width: 100%;
+  padding: 0.6rem;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.rso-button-join {
+  background-color: #3498db;
+  color: white;
+}
+
+.rso-button-join:hover {
+  background-color: #2980b9;
+}
+
+.rso-button-leave {
+  background-color: #f8f9fa;
+  color: #e74c3c;
+  border: 1px solid #e74c3c;
+}
+
+.rso-button-leave:hover {
+  background-color: #fee;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .rso-list-container {
+    padding: 1rem;
+  }
+
+  .rso-list-dashboard {
+    max-width: 100%;
+  }
+
+  .rso-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .rso-list-content {
+    max-height: none;
+  }
+}

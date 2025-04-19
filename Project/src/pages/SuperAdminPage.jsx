@@ -28,13 +28,13 @@ function SuperAdminPage() {
 
       if (!response.ok) throw new Error(data.error || "Creation failed.");
 
-      setMessage("✅ University created successfully!");
+      setMessage("University created successfully!");
       setUniversityName("");
       setLocation("");
       setDescription("");
       setStudents("");
     } catch (err) {
-      setMessage("❌ Error: " + err.message);
+      setMessage("Error: " + err.message);
     }
   };
 
